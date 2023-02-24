@@ -9,7 +9,7 @@ public class StudentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Integer id;
+    private int id;
 
 
     @Column(name = "FIRSTNAME", nullable = false)

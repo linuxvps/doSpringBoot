@@ -19,17 +19,25 @@ public class StudentController {
 
     @Autowired
     StudentService studentService;
+
     @GetMapping
     public ResponseEntity<List<StudentEntity>> getAllStudent() {
         List<StudentEntity> allStudent = studentService.getAllStudent();
 
-        return new ResponseEntity<List<StudentEntity>> (allStudent,new HttpHeaders(), HttpStatus.OK);
+        return new ResponseEntity<List<StudentEntity>>(allStudent, new HttpHeaders(), HttpStatus.OK);
     }
 
 
     @GetMapping("/{id}")
     public ResponseEntity<StudentEntity> getStudentById(@PathVariable("id") Integer id) throws Exception {
         StudentEntity student = studentService.getStudentById(id);
-        return new ResponseEntity<StudentEntity> (student,new HttpHeaders(), HttpStatus.OK);
+        return new ResponseEntity<StudentEntity>(student, new HttpHeaders(), HttpStatus.OK);
+    }
+
+    @GetMapping("getname")
+    public String getStudentFirstname() {
+        String a = studentService.getStudentFirstname();
+       return a;
+
     }
 }

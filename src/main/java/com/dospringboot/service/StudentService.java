@@ -40,4 +40,8 @@ public class StudentService {
         }
     }
 
+    public String getStudentFirstname(){
+        return studentRepository.getStudentFirstname();
+    }
+
 }
